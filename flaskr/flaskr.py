@@ -14,4 +14,5 @@ app.config.update(dict(
     USERNAME='admin',
     PASSWORD='default'
 ))
-app.config.from_envvar('FLASKR_SETTINGS', silent=True)
+app.config.from_envvar('FLASKR_SETTINGS', silent=True) # silent=True tells flask
+# to not complain if the environment key 'FLASKR_SETTINGS' doesn't exist.
