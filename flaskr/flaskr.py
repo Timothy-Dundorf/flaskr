@@ -16,3 +16,9 @@ app.config.update(dict(
 ))
 app.config.from_envvar('FLASKR_SETTINGS', silent=True) # silent=True tells flask
 # to not complain if the environment key 'FLASKR_SETTINGS' doesn't exist.
+
+def connect_db():
+    """Connects to the specified database."""
+    rv = sqlite3.connect(app.config['DATABAE'])
+    rv.row_factory = sqlite3.Row
+    return rv
